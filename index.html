@@ -85,6 +85,77 @@
                     <a href="#home" class="hover:text-amber-400 transition-colors py-1"><span class="lang-hi">होम</span><span class="lang-en hidden">Home</span></a> 
                     <a href="#services" class="hover:text-amber-400 transition-colors py-1"><span class="lang-hi">हमारी सेवाएं</span><span class="lang-en hidden">Services</span></a> 
                     <a href="#apply-form" class="bg-gradient-to-r from-amber-400 to-amber-500 text-blue-900 px-5 py-2 rounded-xl font-bold glow-button hover:scale-105 transition-all"><span class="lang-hi">🔥 ऑनलाइन फॉर्म भरें</span><span class="lang-en hidden">Apply Online</span></a> 
+                    <style>
+  .registration-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  .form-group { margin-bottom: 15px; }
+  .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="registration-container">
+  <h2>कनिका साइबर वर्ल्ड - रजिस्ट्रेशन</h2>
+  <form action="#" method="POST">
+    <div class="form-group">
+      <label>पूरा नाम:</label>
+      <input type="text" name="name" required placeholder="अपना नाम लिखें">
+    </div>
+    
+    <div class="form-group">
+      <label>पिता/पति का नाम:</label>
+      <input type="text" name="guardian" required>
+    </div>
+
+    <div class="form-group">
+      <label>मोबाइल नंबर:</label>
+      <input type="tel" name="phone" required placeholder="10 अंकों का मोबाइल नंबर">
+    </div>
+
+    <div class="form-group">
+      <label>आधार नंबर:</label>
+      <input type="text" name="aadhar" placeholder="xxxx-xxxx-xxxx">
+    </div>
+
+    <div class="form-group">
+      <label>पता (गाँव/शहर):</label>
+      <input type="text" name="address" required>
+    </div>
+
+    <div class="form-group">
+      <label>सेवा का चयन करें:</label>
+      <select name="service">
+        <option value="scheme">सरकारी योजना आवेदन</option>
+        <option value="job">नौकरी/भर्ती फॉर्म</option>
+        <option value="docs">डॉक्यूमेंट/प्रिंटिंग कार्य</option>
+        <option value="design">ग्राफिक डिजाइनिंग</option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-btn">रजिस्टर करें</button>
+  </form>
+</div>
                     <a href="#contact" class="hover:text-amber-400 transition-colors py-1"><span class="lang-hi">संपर्क</span><span class="lang-en hidden">Contact</span></a> 
                 </nav> 
  
