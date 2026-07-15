@@ -1,419 +1,467 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R A CSC CENTER & DIGITAL SERVICES</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
+    <!-- Google Fonts (Inter & Rajdhani) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Smooth language transition effect */
-        .lang-en, .lang-hi { transition: opacity 0.2s ease-in-out; }
-        /* By default hide English content since default lang is Hindi */
+        body { font-family: 'Inter', sans-serif; }
+        .brand-title { font-family: 'Rajdhani', sans-serif; }
+        .lang-en, .lang-hi { transition: all 0.3s ease; }
         .lang-en { display: none; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-600 selection:text-white">
  
-    <!-- Maintenance Overlay Screen (शुरू में छुपा रहेगा) -->
-    <div id="maintenanceScreen" class="fixed inset-0 bg-blue-900 z-[9999] hidden flex items-center justify-center text-center px-4">
-        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-full border-t-8 border-amber-500">
-            <div class="text-amber-500 text-6xl mb-6 animate-bounce">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
+    <!-- Premium Maintenance Overlay Screen -->
+    <div id="maintenanceScreen" class="fixed inset-0 bg-slate-900/95 backdrop-blur-md z-[9999] hidden flex items-center justify-center text-center px-4">
+        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl max-w-xl w-full border-b-8 border-amber-500 transform transition-all duration-500 scale-100">
+            <div class="relative w-24 h-24 bg-amber-50 text-amber-500 text-5xl rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                <i class="fa-solid fa-screwdriver-wrench animate-pulse"></i>
+                <div class="absolute inset-0 rounded-full border-2 border-amber-400 border-dashed animate-spin [animation-duration:10s]"></div>
             </div>
-            <h2 class="text-2xl md:text-3xl font-extrabold text-blue-950 mb-4 lang-hi">वेबसाइट का काम चल रहा है!</h2>
-            <h2 class="text-2xl md:text-3xl font-extrabold text-blue-950 mb-4 lang-en">Website Under Maintenance!</h2>
             
-            <p class="text-gray-600 mb-6 text-sm md:text-base lang-hi">
-                प्रिय ग्राहक, अभी वेबसाइट पर कुछ जरूरी अपडेट का काम चल रहा है। हम बहुत जल्द वापस लाइव होंगे। किसी भी आवश्यक कार्य के लिए आप हमें सीधे कॉल या व्हाट्सएप कर सकते हैं।
+            <h2 class="text-3xl font-black text-slate-900 mb-3 tracking-tight lang-hi font-sans">वेबसाइट का कार्य प्रगति पर है!</h2>
+            <h2 class="text-3xl font-black text-slate-900 mb-3 tracking-tight lang-en font-sans">Website Under Maintenance!</h2>
+            
+            <p class="text-slate-600 mb-8 text-base leading-relaxed lang-hi">
+                प्रिय ग्राहक, हम आपकी सुविधा के लिए पोर्टल को अपडेट कर रहे हैं। इस दौरान ऑनलाइन सेवाएं कुछ समय के लिए बंद रहेंगी। तत्काल सहायता या फॉर्म भरवाने के लिए नीचे दिए गए बटनों से हमसे सीधा संपर्क करें।
             </p>
-            <p class="text-gray-600 mb-6 text-sm md:text-base lang-en">
-                Dear customer, we are currently updating our website to serve you better. We will be back online shortly. For urgent queries, please call or WhatsApp us.
+            <p class="text-slate-600 mb-8 text-base leading-relaxed lang-en">
+                Dear customer, we are currently upgrading our system to serve you better. Online submission will be restored shortly. For urgent application support, please contact us directly.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-3">
-                <a href="tel:+917543977413" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-6 py-3 rounded-lg shadow transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-phone"></i> <span class="lang-hi">कॉल करें</span><span class="lang-en">Call Now</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
+                <a href="tel:+917543977413" class="bg-slate-900 hover:bg-slate-800 text-amber-400 font-bold px-6 py-3.5 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> <span class="lang-hi">कॉल करें</span><span class="lang-en">Call Center</span>
                 </a>
-                <a href="https://wa.me/917543977413" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg shadow transition flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> <span class="lang-hi">व्हाट्सएप</span><span class="lang-en">WhatsApp</span>
+                <a href="https://wa.me/917543977413" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> <span class="lang-hi">व्हाट्सएप</span><span class="lang-en">WhatsApp Chat</span>
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Header / Navbar -->
-    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <div class="bg-amber-500 text-blue-950 p-2 rounded-full font-bold text-xl px-3">R A</div>
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg border-b border-slate-800">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+            <!-- Brand Logo & Identity -->
+            <div class="flex items-center space-x-4">
+                <div class="bg-gradient-to-br from-amber-400 to-amber-500 text-slate-950 w-12 h-12 rounded-2xl flex items-center justify-center font-black text-xl brand-title shadow-md shadow-amber-500/20">
+                    RA
+                </div>
                 <div>
-                    <h1 class="text-xl font-bold tracking-wider">R A CSC CENTER</h1>
-                    <p class="text-xs text-amber-400 font-semibold lang-hi">डिजिटल सेवाएं और ऑनलाइन हब</p>
-                    <p class="text-xs text-amber-400 font-semibold lang-en">DIGITAL SERVICES & ONLINE HUB</p>
+                    <h1 class="text-2xl font-black tracking-wider text-white brand-title">R A CSC CENTER</h1>
+                    <div class="text-xs text-amber-400 font-semibold tracking-wide uppercase mt-0.5">
+                        <span class="lang-hi">डिजिटल सेवाएं व ऑनलाइन हब</span>
+                        <span class="lang-en">Digital Services & Online Hub</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="flex flex-col sm:flex-row items-center gap-4">
-                <nav class="flex space-x-6 text-sm font-medium mr-2">
-                    <a href="#home" class="hover:text-amber-400 transition"><span class="lang-hi">होम</span><span class="lang-en">Home</span></a>
-                    <a href="#services" class="hover:text-amber-400 transition"><span class="lang-hi">सेवाएं</span><span class="lang-en">Services</span></a>
-                    <a href="#apply-form" class="hover:text-amber-400 transition bg-amber-500 text-blue-950 px-3 py-1 rounded font-bold shadow"><span class="lang-hi">ऑनलाइन आवेदन</span><span class="lang-en">Apply Online</span></a>
-                    <a href="#contact" class="hover:text-amber-400 transition"><span class="lang-hi">संपर्क</span><span class="lang-en">Contact</span></a>
+            <!-- Navigation Links & Language Switcher -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 lg:gap-6 w-full lg:w-auto justify-center lg:justify-end">
+                <nav class="flex items-center space-x-5 text-sm font-medium tracking-wide text-slate-300">
+                    <a href="#home" class="hover:text-amber-400 transition-colors py-1"><span class="lang-hi">होम</span><span class="lang-en">Home</span></a>
+                    <a href="#services" class="hover:text-amber-400 transition-colors py-1"><span class="lang-hi">सेवाएं</span><span class="lang-en">Services</span></a>
+                    <a href="#apply-form" class="hover:text-amber-400 transition-colors bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 px-4 py-1.5 rounded-xl font-bold shadow-md shadow-amber-500/10 hover:shadow-amber-500/20"><span class="lang-hi">ऑनलाइन आवेदन</span><span class="lang-en">Apply Online</span></a>
+                    <a href="#contact" class="hover:text-amber-400 transition-colors py-1"><span class="lang-hi">संपर्क</span><span class="lang-en">Contact</span></a>
                 </nav>
 
-                <!-- Language Dropdown Selector -->
-                <div class="flex items-center bg-blue-950 px-2 py-1 rounded border border-blue-700 text-sm">
-                    <i class="fa-solid fa-language text-amber-400 mr-1.5 text-base"></i>
-                    <select id="langSelector" onchange="switchLanguage(this.value)" class="bg-transparent text-white outline-none font-semibold cursor-pointer pr-1">
-                        <option value="hi" class="text-gray-900" selected>हिन्दी</option>
-                        <option value="en" class="text-gray-900">English</option>
+                <!-- Modern Language Dropdown -->
+                <div class="flex items-center bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800 text-sm">
+                    <i class="fa-solid fa-language text-amber-400 mr-2 text-base"></i>
+                    <select id="langSelector" onchange="switchLanguage(this.value)" class="bg-transparent text-white font-bold outline-none cursor-pointer pr-1">
+                        <option value="hi" class="text-slate-900" selected>हिन्दी</option>
+                        <option value="en" class="text-slate-900">English</option>
                     </select>
                 </div>
             </div>
         </div>
     </header>
  
-    <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-20 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="bg-amber-500 text-blue-950 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Authorized CSC Center</span>
+    <!-- Hero / Banner Section -->
+    <section id="home" class="relative bg-slate-950 text-white py-24 px-4 overflow-hidden">
+        <!-- Background decorative design elements -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 text-amber-400 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-6">
+                <i class="fa-solid fa-circle-check text-emerald-500 animate-pulse"></i> Govt. Authorized CSC Center
+            </span>
             
-            <h2 class="text-3xl md:text-5xl font-extrabold mt-6 mb-4 leading-tight lang-hi">
+            <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-[1.15] lang-hi bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400">
                 सभी ऑनलाइन फॉर्म और सरकारी योजनाएं—अब एक ही जगह!
             </h2>
-            <h2 class="text-3xl md:text-5xl font-extrabold mt-6 mb-4 leading-tight lang-en">
-                All Online Forms & Government Schemes—Under One Roof!
+            <h2 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-[1.15] lang-en bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400">
+                All Online Forms & Govt Welfare Schemes—Under One Roof!
             </h2>
 
-            <p class="text-base md:text-lg text-blue-100 mb-8 max-w-2xl mx-auto lang-hi">
-                बिहार सरकार एवं केंद्र सरकार की सभी digital सेवाएं, फॉर्म फिलिंग और banking सेवाएं पूरी सटीकता और सुरक्षा के साथ।
+            <p class="text-base md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed lang-hi">
+                बिहार व केंद्र सरकार की सभी डिजिटल योजनाएं, विभिन्न भर्ती परीक्षाओं के सटीक फॉर्म फिलिंग और त्वरित बैंकिंग सेवाएं पूरी सुरक्षा के साथ।
             </p>
-            <p class="text-base md:text-lg text-blue-100 mb-8 max-w-2xl mx-auto lang-en">
-                All digital services, form fillings, and banking from the Bihar Government and Central Government with complete accuracy and security.
+            <p class="text-base md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed lang-en">
+                Get accurate registrations for Bihar & Central Government schemes, recruitment exam applications, and secure AEPS banking solutions.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:+917543977413" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-8 py-3.5 rounded-lg shadow-lg transition duration-300 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-phone"></i> <span class="lang-hi">अभी कॉल करें</span><span class="lang-en">Call Now</span>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                <a href="tel:+917543977413" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-8 py-4 rounded-2xl shadow-xl shadow-amber-500/10 transition duration-300 flex items-center justify-center gap-2 text-base">
+                    <i class="fa-solid fa-phone"></i> <span class="lang-hi">अभी कॉल करें</span><span class="lang-en">Call Center</span>
                 </a>
-                <a href="https://wa.me/917543977413" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3.5 rounded-lg shadow-lg transition duration-300 flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> <span class="lang-hi">व्हाट्सएप करें</span><span class="lang-en">WhatsApp Us</span>
+                <a href="https://wa.me/917543977413" target="_blank" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition duration-300 flex items-center justify-center gap-2 text-base">
+                    <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i> <span class="lang-hi">व्हाट्सएप करें</span><span class="lang-en">WhatsApp Support</span>
                 </a>
             </div>
         </div>
     </section>
  
-    <!-- Services Section -->
-    <section id="services" class="py-16 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 lang-hi">हमारी प्रमुख सेवाएं</h2>
-            <h2 class="text-3xl font-bold text-gray-900 lang-en">Our Key Services</h2>
+    <!-- Premium Services Section -->
+    <section id="services" class="py-20 px-4 max-w-7xl mx-auto relative">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight lang-hi">हमारी उत्कृष्ट सेवाएं</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight lang-en">Our Premium Digital Services</h2>
             
-            <p class="text-gray-600 mt-2 lang-hi">हम आपकी सुविधा के लिए सभी डिजिटल काम जिम्मेदारी से करते हैं</p>
-            <p class="text-gray-600 mt-2 lang-en">We handle all digital works professionally for your convenience</p>
+            <p class="text-slate-500 mt-3 text-sm md:text-base lang-hi">हम आपके सभी डिजिटल और ऑनलाइन कार्यों को पूरी जिम्मेदारी व शुद्धता से करते हैं</p>
+            <p class="text-slate-500 mt-3 text-sm md:text-base lang-en">Professional assistance for all your government forms and online business jobs</p>
             
-            <div class="w-24 h-1 bg-blue-900 mx-auto mt-4 rounded"></div>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
         </div>
  
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-file-invoice"></i></div>
-                
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">सरकारी योजनाएं</h3>
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Government Schemes</h3>
-                
-                <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    PM Kisan, कन्या उत्थान योजना, मुख्यमंत्री महिला रोज़गार योजना, DBT लिंक और नया राशन कार्ड आवेदन।
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed lang-en">
-                    PM Kisan, Kanya Utthan Yojana, Mukhyamantri Mahila Rozgar Yojana, DBT Linking, and new Ration Card applications.
-                </p>
+            <!-- Service Card 1 -->
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-indigo-600 transition-colors lang-hi">सरकारी योजनाएं</h3>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-indigo-600 transition-colors lang-en">Government Schemes</h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed lang-hi">
+                        PM Kisan सम्मान निधि, कन्या उत्थान योजना, मुख्यमंत्री महिला रोज़गार योजना, आधार-DBT लिंक और नए राशन कार्ड का सम्पूर्ण काम।
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed lang-en">
+                        End-to-end processing for PM Kisan, Kanya Utthan Yojana, Mukhyamantri Mahila Rozgar Yojana, DBT and Ration Cards.
+                    </p>
+                </div>
             </div>
  
-            <!-- Card 2 -->
-            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-user-graduate"></i></div>
-                
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">ऑनलाइन फॉर्म</h3>
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Online Admission & Jobs</h3>
-                
-                <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    CTET, BPSC, BTSC, Army, ANM और सभी सरकारी नौकरियों के फॉर्म बिना किसी गलती के भरवाएं।
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed lang-en">
-                    Fill out forms for CTET, BPSC, BTSC, Army, ANM, and all recruitment exams with zero mistakes.
-                </p>
+            <!-- Service Card 2 -->
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-amber-600 transition-colors lang-hi">ऑनलाइन भर्ती फॉर्म</h3>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-amber-600 transition-colors lang-en">Competitive Exam Forms</h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed lang-hi">
+                        CTET, BPSC TRE, BTSC भर्ती, ANM, रक्षा सेवाएं (Army/Navy) व सभी केंद्रीय व राज्य स्तरीय प्रतियोगी परीक्षाओं के त्रुटिहीन फॉर्म।
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed lang-en">
+                        Flawless application submissions for CTET, BPSC TRE, BTSC, Bihar ANM positions, and other state and central recruitments.
+                    </p>
+                </div>
             </div>
  
-            <!-- Card 3 -->
-            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-building-columns"></i></div>
-                
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">बैंकिंग व DBT सेवाएं (AEPS)</h3>
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Banking & DBT Services</h3>
-                
-                <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    अंगूठे के निशान से पैसे निकालना, बैंक बैलेंस चेक करना, और DBT (Direct Benefit Transfer) की समस्याएं सुधारना।
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed lang-en">
-                    Aadhaar-based cash withdrawal (AEPS), balance inquiry, and resolution of Direct Benefit Transfer (DBT) issues.
-                </p>
+            <!-- Service Card 3 -->
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-emerald-600 transition-colors lang-hi">बैंकिंग व AEPS सेवाएं</h3>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-emerald-600 transition-colors lang-en">Banking & AEPS Hub</h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed lang-hi">
+                        आधार फिंगरप्रिंट (AEPS) द्वारा किसी भी बैंक से सुरक्षित नकद निकासी, मिनी स्टेटमेंट, बैलेंस इंक्वायरी एवं DBT भुगतान सुधार।
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed lang-en">
+                        Safe Aadhaar Enabled Payment System (AEPS) withdrawals, instant bank balance inquiry, statements, and DBT tracking.
+                    </p>
+                </div>
             </div>
  
-            <!-- Card 4 -->
-            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-id-card"></i></div>
-                
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">दस्तावेज़ व प्रमाण पत्र</h3>
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Official Documents</h3>
-                
-                <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    जाति, आय, निवास प्रमाण पत्र, नया PAN Card और Voter ID तुरंत ऑनलाइन अप्लाई करें।
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed lang-en">
-                    Apply for Caste, Income, and Residence certificates, new PAN cards, and Voter ID cards online instantly.
-                </p>
+            <!-- Service Card 4 -->
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-rose-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-rose-600 transition-colors lang-hi">दस्तावेज़ व ई-प्रमाण पत्र</h3>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-rose-600 transition-colors lang-en">Certificates & PAN</h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed lang-hi">
+                        जाति, आय, निवास प्रमाण पत्र (RTPS), नया PAN Card संशोधन, Voter ID कार्ड, और आयुष्मान हेल्थ कार्ड हेतु तीव्र आवेदन।
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed lang-en">
+                        Fast track creation of Caste, Income, Residence certificates via RTPS portal, new PAN cards, and Voter IDs.
+                    </p>
+                </div>
             </div>
  
-            <!-- Card 5 -->
-            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-camera"></i></div>
-                
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">फोटो व ग्राफिक डिज़ाइन</h3>
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Graphics & Editing</h3>
-                
-                <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    पासपोर्ट साइज फोटो, आकर्षक YouTube Thumbnails, सोशल मीडिया पोस्ट, और हाई क्वालिटी बैनर डिज़ाइन।
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed lang-en">
-                    Passport-size photos, high-converting YouTube thumbnails, social media posts, and custom banners.
-                </p>
+            <!-- Service Card 5 -->
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-cyan-600 transition-colors lang-hi">ग्राफिक व थंबनेल डिज़ाइन</h3>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-cyan-600 transition-colors lang-en">Thumbnails & Graphics</h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed lang-hi">
+                        हाई क्वालिटी पासपोर्ट आकार फोटो मेकिंग, आकर्षक YouTube Thumbnails मेकिंग, डिजिटल पोस्टर्स एवं सोशल मीडिया बैनर मेकिंग।
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed lang-en">
+                        High-quality digital photo tuning, passport photos, high-CTR YouTube thumbnails, and social media flyers.
+                    </p>
+                </div>
             </div>
  
-            <!-- Card 6 -->
-            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
-                <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-print"></i></div>
-                
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">प्रिंटिंग व अन्य कार्य</h3>
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Printing & Typing Work</h3>
-                
-                <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    कलर PRINTOUT, डॉक्यूमेंट लैमिनेशन, फोटोकॉपी (Xerox) और किसी भी प्रकार का टाइपिंग व डॉक्यूमेंट प्रोसेसिंग वर्क।
-                </p>
-                <p class="text-gray-600 text-sm leading-relaxed lang-en">
-                    Color printouts, document lamination, photocopy (Xerox), Hindi/English typing, and document processing.
-                </p>
+            <!-- Service Card 6 -->
+            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:border-indigo-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-print"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-purple-600 transition-colors lang-hi">प्रिंटिंग व डेटा प्रोसेसिंग</h3>
+                    <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-purple-600 transition-colors lang-en">Smart Printing Hub</h3>
+                    
+                    <p class="text-slate-600 text-sm leading-relaxed lang-hi">
+                        हाई-डेफिनिशन कलर प्रिंटआउट, दस्तावेज़ लेमिनेशन, फास्ट जेरॉक्स (Xerox), और हिंदी/अंग्रेजी कंप्यूटर टाइपिंग जॉब्स।
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed lang-en">
+                        HD color printouts, smart document lamination, speed photocopies, and digital text typing/processing operations.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Customer Application & Upload Form Section -->
-    <section id="apply-form" class="py-16 bg-indigo-50 px-4">
-        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-            <div class="bg-blue-900 text-white p-6 text-center">
-                <h2 class="text-2xl font-bold lang-hi">ऑनलाइन सेवा अनुरोध फॉर्म</h2>
-                <h2 class="text-2xl font-bold lang-en">Online Service Application Form</h2>
+    <!-- Interactive Client Submission Form Section -->
+    <section id="apply-form" class="py-20 bg-slate-100 px-4 relative">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/60">
+            <div class="bg-slate-900 text-white p-8 text-center relative">
+                <h2 class="text-3xl font-extrabold tracking-tight lang-hi">स्मार्ट सर्विस रिक्वेस्ट फॉर्म</h2>
+                <h2 class="text-3xl font-extrabold tracking-tight lang-en">Digital Service Request Desk</h2>
                 
-                <p class="text-blue-200 text-xs mt-1 lang-hi">अपनी डिटेल्स भरें और डॉक्यूमेंट अपलोड करें, हम आपका काम तुरंत शुरू कर देंगे</p>
-                <p class="text-blue-200 text-xs mt-1 lang-en">Fill in your details and upload documents to get your work done instantly</p>
+                <p class="text-slate-400 text-xs md:text-sm mt-2 max-w-md mx-auto lang-hi">दस्तावेज़ों को साफ़ स्कैन/फोटो लेकर यहाँ अपलोड करें, आपका काम तुरंत प्रोसैस कर दिया जाएगा</p>
+                <p class="text-slate-400 text-xs md:text-sm mt-2 max-w-md mx-auto lang-en">Securely upload document photos/PDFs here to kick-start your service application immediately</p>
             </div>
             
-            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="p-8 space-y-6">
+            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="p-8 md:p-10 space-y-6">
+                <!-- Replace with your actual Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-2">
-                            <span class="lang-hi">पूरा नाम</span><span class="lang-en">Full Name</span> <span class="text-red-500">*</span>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">
+                            <span class="lang-hi">आवेदक का पूरा नाम</span><span class="lang-en">Full Name</span> <span class="text-rose-500">*</span>
                         </label>
-                        <input type="text" name="name" required placeholder="Name" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition">
+                        <input type="text" name="name" required placeholder="जैसे: Rahul Kumar" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-2">
-                            <span class="lang-hi">मोबाइल नंबर</span><span class="lang-en">Mobile Number</span> <span class="text-red-500">*</span>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">
+                            <span class="lang-hi">सक्रिय मोबाइल नंबर</span><span class="lang-en">Active Mobile No.</span> <span class="text-rose-500">*</span>
                         </label>
-                        <input type="tel" name="phone" required placeholder="Mobile Number" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition">
+                        <input type="tel" name="phone" required placeholder="10 अंकों का नंबर" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">
-                        <span class="lang-hi">कौन सी सेवा चाहिए?</span><span class="lang-en">Choose Required Service</span> <span class="text-red-500">*</span>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">
+                        <span class="lang-hi">वांछित डिजिटल सेवा चुनें</span><span class="lang-en">Select Service Category</span> <span class="text-rose-500">*</span>
                     </label>
-                    <select name="service_type" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition bg-white">
-                        <option value="" disabled selected class="lang-hi">सर्विस का चयन करें...</option>
-                        <option value="Govt Scheme">सरकारी योजना / Govt Scheme (PM Kisan / Kanya Utthan)</option>
-                        <option value="Exam Form">ऑनलाइन नौकरी-परीक्षा फॉर्म / Recruitment Form (BPSC, CTET, ANM)</option>
-                        <option value="Certificate">प्रमाण पत्र / Certificates (Caste / Income / Residence / PAN)</option>
-                        <option value="Banking">बैंकिंग या DBT समस्या / Banking & DBT Services</option>
-                        <option value="Design">फोटो या थंबनेल डिज़ाइन / Graphic & Thumbnail Design</option>
-                        <option value="Other">अन्य डिजिटल सेवा / Other Digital Work</option>
+                    <select name="service_type" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50 text-sm">
+                        <option value="" disabled selected class="lang-hi">यहाँ से चयन करें...</option>
+                        <option value="Govt Scheme">सरकारी योजना (PM Kisan / Kanya Utthan / Mahila Rozgar)</option>
+                        <option value="Exam Form">प्रतियोगी परीक्षा आवेदन (BPSC, CTET, BTSC ANM Form)</option>
+                        <option value="Certificate">RTPS प्रमाण पत्र (Caste / Income / Residence / PAN / Voter ID)</option>
+                        <option value="Banking">बैंकिंग भुगतान / DBT समस्या समाधान</option>
+                        <option value="Design">YouTube थंबनेल / फोटो ग्राफिक एडिटिंग</option>
+                        <option value="Other">अन्य ऑनलाइन / साइबर कैफे कार्य</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">
-                        <span class="lang-hi">काम की जानकारी</span><span class="lang-en">Work Description / Details</span>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">
+                        <span class="lang-hi">कार्य से संबधित अतिरिक्त विवरण</span><span class="lang-en">Additional Work Instructions</span>
                     </label>
-                    <textarea name="details" rows="3" placeholder="Write details about the work here..." class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition"></textarea>
+                    <textarea name="details" rows="3" placeholder="फॉर्म से सम्बंधित जानकारी यहाँ लिखें..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50 text-sm"></textarea>
                 </div>
 
-                <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200/70">
                     <label class="block text-sm font-bold text-amber-900 mb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-cloud-arrow-up text-lg"></i> 
-                        <span class="lang-hi">दस्तावेज़ अपलोड करें</span><span class="lang-en">Upload Documents</span>
+                        <i class="fa-solid fa-cloud-arrow-up text-xl text-amber-600"></i> 
+                        <span class="lang-hi">आवश्यक दस्तावेज़ संलग्न करें</span><span class="lang-en">Attach Required Documents</span>
                     </label>
-                    <p class="text-xs text-amber-700 mb-3 lang-hi">कृपया अपने ज़रूरी दस्तावेज़ों (आधार, फोटो, मार्कशीट) की साफ़ फोटो या PDF चुनें:</p>
-                    <p class="text-xs text-amber-700 mb-3 lang-en">Please upload clear photos or PDFs of required documents (Aadhaar, Photo, Marksheet):</p>
+                    <p class="text-xs text-amber-800/80 mb-3 lang-hi">कृपया अपने आधार, फोटो या अंक पत्र की साफ़ तस्वीरें/PDF चुनें:</p>
+                    <p class="text-xs text-amber-800/80 mb-3 lang-en">Please batch upload clear snapshots or PDFs of required papers:</p>
                     
-                    <input type="file" name="documents" multiple class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-800 cursor-pointer">
+                    <input type="file" name="documents" multiple class="block w-full text-sm text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-slate-900 file:text-amber-400 hover:file:bg-slate-800 cursor-pointer">
                 </div>
 
-                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-300 flex items-center justify-center gap-2 text-lg">
-                    <i class="fa-solid fa-paper-plane"></i> <span class="lang-hi">जानकारी भेजें</span><span class="lang-en">Submit Application</span>
+                <button type="submit" class="w-full bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white font-bold py-4 px-4 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2 text-base">
+                    <i class="fa-solid fa-paper-plane text-amber-400"></i> <span class="lang-hi">अनुरोध सबमिट करें</span><span class="lang-en">Send Application</span>
                 </button>
             </form>
         </div>
     </section>
  
-    <!-- Why Choose Us -->
-    <section id="why-us" class="bg-blue-900 text-white py-16 px-4">
+    <!-- Trust Infrastructure Indicators -->
+    <section class="bg-slate-950 text-white py-20 px-4 border-t border-slate-900">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold lang-hi">हमें क्यों चुनें?</h2>
-                <h2 class="text-3xl font-bold lang-en">Why Choose Us?</h2>
-                <div class="w-24 h-1 bg-amber-500 mx-auto mt-4 rounded"></div>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold tracking-tight lang-hi">हमारी कार्य प्रणाली के स्तंभ</h2>
+                <h2 class="text-3xl font-extrabold tracking-tight lang-en">Why Local Communities Trust Us?</h2>
+                <div class="w-16 h-1 bg-amber-400 mx-auto mt-4 rounded-full"></div>
             </div>
  
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-4">
-                    <div class="bg-amber-500 w-16 h-16 flex items-center justify-center rounded-full text-blue-950 text-2xl font-bold mx-auto mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <!-- Trust Item 1 -->
+                <div class="p-6 bg-slate-900/50 rounded-2xl border border-slate-900">
+                    <div class="bg-amber-400 w-14 h-14 flex items-center justify-center rounded-2xl text-slate-950 text-xl font-bold mx-auto mb-5 shadow-lg shadow-amber-400/10">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 lang-hi">100% सुरक्षित</h3>
-                    <h3 class="text-xl font-semibold mb-2 lang-en">100% Secure</h3>
-                    <p class="text-blue-200 text-sm lang-hi">आधिकारिक CSC पोर्टल और सुरक्षित पेमेंट गेटवे के माध्यम से कार्य।</p>
-                    <p class="text-blue-200 text-sm lang-en">All transactions are managed through verified official secure digital systems.</p>
+                    <h3 class="text-lg font-bold mb-2 text-white lang-hi">पूर्ण सुरक्षित प्रमाणीकरण</h3>
+                    <h3 class="text-lg font-bold mb-2 text-white lang-en">100% Secure Operations</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed lang-hi">सभी सरकारी आवेदन अधिकारिक सीएससी गेटवे और एन्क्रिप्टेड नेटवर्क से सुरक्षित संपन्न होते हैं।</p>
+                    <p class="text-slate-400 text-sm leading-relaxed lang-en">Encrypted network connection protocols ensure total data discretion and safe direct payments.</p>
                 </div>
-                <div class="p-4">
-                    <div class="bg-amber-500 w-16 h-16 flex items-center justify-center rounded-full text-blue-950 text-2xl font-bold mx-auto mb-4">
+                
+                <!-- Trust Item 2 -->
+                <div class="p-6 bg-slate-900/50 rounded-2xl border border-slate-900">
+                    <div class="bg-amber-400 w-14 h-14 flex items-center justify-center rounded-2xl text-slate-950 text-xl font-bold mx-auto mb-5 shadow-lg shadow-amber-400/10">
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 lang-hi">बिना किसी गलती के</h3>
-                    <h3 class="text-xl font-semibold mb-2 lang-en">Zero Errors</h3>
-                    <p class="text-blue-200 text-sm lang-hi">आपके फॉर्म को पूरी बारीकी से जांचकर भरा जाता है ताकि रिजेक्ट न हो।</p>
-                    <p class="text-blue-200 text-sm lang-en">Every online application is double-checked thoroughly to prevent any rejections.</p>
+                    <h3 class="text-lg font-bold mb-2 text-white lang-hi">शून्य त्रुटि दर नीति</h3>
+                    <h3 class="text-lg font-bold mb-2 text-white lang-en">Zero-Rejection Guarantee</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed lang-hi">प्रतियोगी फॉर्म या योजनाओं की गाइडलाइन को बारीकी से री-चेक किया जाता है ताकि रिजेक्शन न हो।</p>
+                    <p class="text-slate-400 text-sm leading-relaxed lang-en">Meticulous manual reviews of parameters to guarantee zero-fault registration.</p>
                 </div>
-                <div class="p-4">
-                    <div class="bg-amber-500 w-16 h-16 flex items-center justify-center rounded-full text-blue-950 text-2xl font-bold mx-auto mb-4">
+
+                <!-- Trust Item 3 -->
+                <div class="p-6 bg-slate-900/50 rounded-2xl border border-slate-900">
+                    <div class="bg-amber-400 w-14 h-14 flex items-center justify-center rounded-2xl text-slate-950 text-xl font-bold mx-auto mb-5 shadow-lg shadow-amber-400/10">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 lang-hi">तेज़ व किफायती</h3>
-                    <h3 class="text-xl font-semibold mb-2 lang-en">Fast & Affordable</h3>
-                    <p class="text-blue-200 text-sm lang-hi">कस्टमर की समस्याओं का तुरंत समाधान और बेहद वाजिब शुल्क पर काम।</p>
-                    <p class="text-blue-200 text-sm lang-en">Instant solutions for digital grievances at very affordable pricing.</p>
+                    <h3 class="text-lg font-bold mb-2 text-white lang-hi">त्वरित समाधान व्यवस्था</h3>
+                    <h3 class="text-lg font-bold mb-2 text-white lang-en">Express Processing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed lang-hi">DBT पेंडिंग या फिंगरप्रिंट एरर जैसी समस्याओं को तुरंत ट्रैक कर निवारण सुनिश्चित करना।</p>
+                    <p class="text-slate-400 text-sm leading-relaxed lang-en">Fast turnaround support windows for immediate mitigation of transaction failures.</p>
                 </div>
             </div>
         </div>
     </section>
  
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 lang-hi">हमसे संपर्क करें</h2>
-            <h2 class="text-3xl font-bold text-gray-900 lang-en">Contact Us</h2>
+    <!-- Contact Info Desk -->
+    <section id="contact" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight lang-hi">काउंसेलिंग एवं हेल्पडेस्क</h2>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight lang-en">Reach Our Office Desk</h2>
             
-            <p class="text-gray-600 mt-2 lang-hi">दुकान पर आएं या सीधे फोन पर संपर्क करें</p>
-            <p class="text-gray-600 mt-2 lang-en">Visit our shop premises or call us directly on our mobile</p>
+            <p class="text-slate-500 mt-2 text-sm lang-hi">दस्तावेज़ सत्यापन के लिए केंद्र पर आएं या कॉल करें</p>
+            <p class="text-slate-500 mt-2 text-sm lang-en">Visit our premises for identity indexing or direct consultation</p>
             
-            <div class="w-24 h-1 bg-blue-900 mx-auto mt-4 rounded"></div>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
         </div>
  
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Contact Info -->
-            <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            <!-- Contact Specifics -->
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-slate-200/60 flex flex-col justify-between">
                 <div>
-                    <h3 class="text-2xl font-bold text-blue-900 mb-6 lang-hi">संपर्क सूत्र</h3>
-                    <h3 class="text-2xl font-bold text-blue-900 mb-6 lang-en">Contact Details</h3>
+                    <h3 class="text-2xl font-black text-slate-900 mb-6 lang-hi tracking-tight">ऑफिसियल संपर्क सूत्र</h3>
+                    <h3 class="text-2xl font-black text-slate-900 mb-6 lang-en tracking-tight">Official Contact Grid</h3>
                      
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
-                            <div class="text-blue-900 text-xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="text-indigo-600 text-xl bg-indigo-50 w-10 h-10 rounded-xl flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-800"><span class="lang-hi">दुकान का पता:</span><span class="lang-en">Shop Address:</span></h4>
-                                <p class="text-gray-600 text-sm">हासनपुर, मुंगेर, बिहार (Hasanpur, Munger, Bihar)</p>
+                                <h4 class="font-bold text-slate-800 text-sm md:text-base"><span class="lang-hi">डिजिटल केंद्र का पता:</span><span class="lang-en">Physical Location:</span></h4>
+                                <p class="text-slate-600 text-sm mt-0.5">हासनपुर, मुंगेर, बिहार (Hasanpur, Munger, Bihar)</p>
                             </div>
                         </div>
  
                         <div class="flex items-start space-x-4">
-                            <div class="text-blue-900 text-xl mt-1"><i class="fa-solid fa-phone"></i></div>
+                            <div class="text-emerald-600 text-xl bg-emerald-50 w-10 h-10 rounded-xl flex items-center justify-center shrink-0"><i class="fa-solid fa-phone"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-800"><span class="lang-hi">मोबाइल नंबर:</span><span class="lang-en">Mobile Number:</span></h4>
-                                <p class="text-gray-600 text-sm">+91 75439 77413</p>
+                                <h4 class="font-bold text-slate-800 text-sm md:text-base"><span class="lang-hi">हेल्पलाइन मोबाइल नंबर:</span><span class="lang-en">Mobile Hotline:</span></h4>
+                                <p class="text-slate-600 text-sm mt-0.5">+91 75439 77413</p>
                             </div>
                         </div>
  
                         <div class="flex items-start space-x-4">
-                            <div class="text-blue-900 text-xl mt-1"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="text-rose-600 text-xl bg-rose-50 w-10 h-10 rounded-xl flex items-center justify-center shrink-0"><i class="fa-solid fa-envelope"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-800"><span class="lang-hi">ईमेल:</span><span class="lang-en">Email:</span></h4>
-                                <p class="text-gray-600 text-sm">racsc91@gmail.com</p>
+                                <h4 class="font-bold text-slate-800 text-sm md:text-base"><span class="lang-hi">आधिकारिक ईमेल आईडी:</span><span class="lang-en">Email Coordinates:</span></h4>
+                                <p class="text-slate-600 text-sm mt-0.5">racsc91@gmail.com</p>
                             </div>
                         </div>
  
                         <div class="flex items-start space-x-4">
-                            <div class="text-blue-900 text-xl mt-1"><i class="fa-solid fa-clock"></i></div>
+                            <div class="text-amber-600 text-xl bg-amber-50 w-10 h-10 rounded-xl flex items-center justify-center shrink-0"><i class="fa-solid fa-clock"></i></div>
                             <div>
-                                <h4 class="font-bold text-gray-800"><span class="lang-hi">खुलने का समय:</span><span class="lang-en">Working Hours:</span></h4>
-                                <p class="text-gray-600 text-sm lang-hi">सुबह 08:00 बजे से रात 08:00 बजे तक (सोमवार - शनिवार)</p>
-                                <p class="text-gray-600 text-sm lang-en">08:00 AM to 08:00 PM (Monday to Saturday)</p>
+                                <h4 class="font-bold text-slate-800 text-sm md:text-base"><span class="lang-hi">संचालन समय सारणी:</span><span class="lang-en">Business Hours:</span></h4>
+                                <p class="text-slate-600 text-sm mt-0.5 lang-hi">सुबह 08:00 बजे से रात्रि 08:00 बजे तक (सोमवार - शनिवार)</p>
+                                <p class="text-slate-600 text-sm mt-0.5 lang-en">08:00 AM to 08:00 PM IST (Monday to Saturday)</p>
                             </div>
                         </div>
                     </div>
                 </div>
  
-                <div class="mt-8 pt-6 border-t border-gray-100 text-center lg:text-left">
-                    <p class="text-xs text-gray-500 lang-hi"><strong>नोट:</strong> किसी भी सरकारी योजना की सही जानकारी के लिए आप दुकान पर सीधे दस्तावेज़ों के साथ आ सकते हैं।</p>
-                    <p class="text-xs text-gray-500 lang-en"><strong>Note:</strong> You can directly visit our shop center with your documents for real verification of welfare schemes.</p>
+                <div class="mt-8 pt-6 border-t border-slate-100">
+                    <p class="text-xs text-slate-500 leading-relaxed lang-hi"><strong>महत्वपूर्ण सूचना:</strong> सटीक दस्तावेज़ मिलान (Verification) के लिए आवेदक अपने ओरिजिनल प्रमाण पत्रों के साथ कार्यालय पधारें।</p>
+                    <p class="text-xs text-slate-500 leading-relaxed lang-en"><strong>Notice:</strong> Please carry original proof documents for verification checks at the counter.</p>
                 </div>
             </div>
  
-            <!-- Map Placeholder or Image -->
-            <div class="bg-gray-200 rounded-2xl overflow-hidden min-h-[300px] flex items-center justify-center relative shadow-inner">
-                <div class="text-center p-6">
-                    <i class="fa-solid fa-map-location-dot text-blue-950 text-5xl mb-4"></i>
-                    <p class="font-bold text-gray-700 lang-hi">Google Map लोकेशन</p>
-                    <p class="font-bold text-gray-700 lang-en">Google Map Location</p>
-                    
-                    <p class="text-gray-500 text-xs mt-1 lang-hi">आप यहाँ अपना गूगल मैप का Embed कोड पेस्ट कर सकते हैं।</p>
-                    <p class="text-gray-500 text-xs mt-1 lang-en">You can embed your dynamic Google Maps code right inside this area.</p>
+            <!-- Modern Map Embed Box -->
+            <div class="bg-slate-200 rounded-3xl overflow-hidden min-h-[350px] flex items-center justify-center relative shadow-inner group">
+                <div class="text-center p-8 relative z-10">
+                    <div class="w-16 h-16 bg-slate-900/10 text-slate-900 text-4xl rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg lang-hi">Google Map लाइव नेविगेशन</p>
+                    <p class="font-bold text-slate-800 text-lg lang-en">Google Maps Live Sync</p>
+                    <p class="text-slate-500 text-xs mt-2 max-w-xs mx-auto lang-hi">आप यहाँ अपनी दुकान का असली गूगल मैप आईफ्रेम (iframe) एम्बेड कोड डाल सकते हैं।</p>
+                    <p class="text-slate-500 text-xs mt-2 max-w-xs mx-auto lang-en">Embed your structural dynamic Google Map code snippet inside this division block.</p>
                 </div>
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-100/10 to-slate-300/30 pointer-events-none"></div>
             </div>
         </div>
     </section>
  
-    <!-- Footer -->
-    <footer class="bg-blue-950 text-gray-400 py-8 px-4 border-t border-blue-900 text-center">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-sm">&copy; 2026 R A CSC CENTER. All Rights Reserved.</p>
-            <p class="text-xs">Designed with ❤️ for Digital India</p>
+    <!-- Footer Section -->
+    <footer class="bg-slate-950 text-slate-500 py-10 px-4 border-t border-slate-900 text-center">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
+            <p>&copy; 2026 R A CSC CENTER. All Rights Reserved.</p>
+            <p class="tracking-wide">Designed with ❤️ for Digital India Hub</p>
         </div>
     </footer>
 
-    <!-- Secret Maintenance Admin Controller Button (सिर्फ आपके कंट्रोल के लिए स्क्रीन के नीचे कोने में छोटा सा बटन) -->
-    <div class="fixed bottom-4 right-4 z-[10000] opacity-30 hover:opacity-100 transition">
-        <button onclick="toggleMaintenanceMode()" class="bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-md border border-gray-600 font-mono">
-            🛠️ Admin Control
+    <!-- Secret Maintenance Dashboard Switcher Button -->
+    <div class="fixed bottom-5 left-5 z-[10000] opacity-25 hover:opacity-100 transition-opacity duration-300">
+        <button onclick="toggleMaintenanceMode()" class="bg-slate-900 text-amber-400 text-xs px-3 py-1.5 rounded-xl shadow-xl border border-slate-800 font-mono font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-user-gear"></i> Dev Toggle
         </button>
     </div>
 
-    <!-- JavaScript to toggle Language Switch smoothly & Maintenance Mode -->
+    <!-- JavaScript Infrastructure -->
     <script>
-        // 1. Language Controller
+        // 1. Language Toggle Mechanism
         function switchLanguage(lang) {
             const hiElements = document.querySelectorAll('.lang-hi');
             const enElements = document.querySelectorAll('.lang-en');
@@ -429,8 +477,7 @@
             }
         }
 
-        // 2. Maintenance Mode Controller
-        // जब भी काम करना हो, आप नीचे दिए बटन को दबा सकते हैं या इस वेरिएबल को true कर सकते हैं।
+        // 2. Control Maintenance Switch
         let isMaintenanceActive = false; 
 
         function toggleMaintenanceMode() {
@@ -439,12 +486,12 @@
             
             if (isMaintenanceActive) {
                 screen.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // स्क्रॉल बंद करने के लिए
-                alert("Maintenance Mode चालू हो गया है! ग्राहकों को अब मेंटेनेंस पेज दिखेगा।");
+                document.body.style.overflow = 'hidden'; 
+                console.log("System Status: Live Maintenance Screen Activated.");
             } else {
                 screen.classList.add('hidden');
-                document.body.style.overflow = 'auto'; // स्क्रॉल चालू करने के लिए
-                alert("Maintenance Mode बंद हो गया है! वेबसाइट अब सबके लिए लाइव है।");
+                document.body.style.overflow = 'auto'; 
+                console.log("System Status: Maintenance Terminated. Core Portal Live.");
             }
         }
     </script>
