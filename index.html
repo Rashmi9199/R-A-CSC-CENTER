@@ -17,6 +17,33 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans selection:bg-blue-600 selection:text-white">
  
+    <!-- Maintenance Overlay Screen (शुरू में छुपा रहेगा) -->
+    <div id="maintenanceScreen" class="fixed inset-0 bg-blue-900 z-[9999] hidden flex items-center justify-center text-center px-4">
+        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-full border-t-8 border-amber-500">
+            <div class="text-amber-500 text-6xl mb-6 animate-bounce">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-blue-950 mb-4 lang-hi">वेबसाइट का काम चल रहा है!</h2>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-blue-950 mb-4 lang-en">Website Under Maintenance!</h2>
+            
+            <p class="text-gray-600 mb-6 text-sm md:text-base lang-hi">
+                प्रिय ग्राहक, अभी वेबसाइट पर कुछ जरूरी अपडेट का काम चल रहा है। हम बहुत जल्द वापस लाइव होंगे। किसी भी आवश्यक कार्य के लिए आप हमें सीधे कॉल या व्हाट्सएप कर सकते हैं।
+            </p>
+            <p class="text-gray-600 mb-6 text-sm md:text-base lang-en">
+                Dear customer, we are currently updating our website to serve you better. We will be back online shortly. For urgent queries, please call or WhatsApp us.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+                <a href="tel:+917543977413" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-6 py-3 rounded-lg shadow transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> <span class="lang-hi">कॉल करें</span><span class="lang-en">Call Now</span>
+                </a>
+                <a href="https://wa.me/917543977413" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg shadow transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> <span class="lang-hi">व्हाट्सएप</span><span class="lang-en">WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Header / Navbar -->
     <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
@@ -62,7 +89,7 @@
             </h2>
 
             <p class="text-base md:text-lg text-blue-100 mb-8 max-w-2xl mx-auto lang-hi">
-                बिहार सरकार एवं केंद्र सरकार की सभी डिजिटल सेवाएं, फॉर्म फिलिंग और बैंकिंग सेवाएं पूरी सटीकता और सुरक्षा के साथ।
+                बिहार सरकार एवं केंद्र सरकार की सभी digital सेवाएं, फॉर्म फिलिंग और banking सेवाएं पूरी सटीकता और सुरक्षा के साथ।
             </p>
             <p class="text-base md:text-lg text-blue-100 mb-8 max-w-2xl mx-auto lang-en">
                 All digital services, form fillings, and banking from the Bihar Government and Central Government with complete accuracy and security.
@@ -100,7 +127,7 @@
                 <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Government Schemes</h3>
                 
                 <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    PM Kisan, कन्या उत्थान योजना, मुख्यमंत्री महिला रोज़गार योजना, DBT लिंक और नया राशन कार्ड आवेदन।
+                    PM Kisan, कन्या उत्थान योजना, मुख्यमंत्री महिला रोज़गार योजना, DBT लिंक और नया राशन कार्ड आवेदन।
                 </p>
                 <p class="text-gray-600 text-sm leading-relaxed lang-en">
                     PM Kisan, Kanya Utthan Yojana, Mukhyamantri Mahila Rozgar Yojana, DBT Linking, and new Ration Card applications.
@@ -130,7 +157,7 @@
                 <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Banking & DBT Services</h3>
                 
                 <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    अंगूठे के निशान से पैसे निकालना, बैंक बैलेंस चेक करना, और DBT (Direct Benefit Transfer) की समस्याएं सुधारna।
+                    अंगूठे के निशान से पैसे निकालना, बैंक बैलेंस चेक करना, और DBT (Direct Benefit Transfer) की समस्याएं सुधारना।
                 </p>
                 <p class="text-gray-600 text-sm leading-relaxed lang-en">
                     Aadhaar-based cash withdrawal (AEPS), balance inquiry, and resolution of Direct Benefit Transfer (DBT) issues.
@@ -141,7 +168,7 @@
             <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
                 <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-id-card"></i></div>
                 
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">दस्तावेज़ व प्रमाण पत्र</h3>
+                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">दस्तावेज़ व प्रमाण पत्र</h3>
                 <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Official Documents</h3>
                 
                 <p class="text-gray-600 text-sm leading-relaxed lang-hi">
@@ -156,11 +183,11 @@
             <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition">
                 <div class="text-blue-900 text-3xl mb-4"><i class="fa-solid fa-camera"></i></div>
                 
-                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">फोटो व ग्राफिक डिज़ाइन</h3>
+                <h3 class="text-xl font-bold mb-2 text-blue-900 lang-hi">फोटो व ग्राफिक डिज़ाइन</h3>
                 <h3 class="text-xl font-bold mb-2 text-blue-900 lang-en">Graphics & Editing</h3>
                 
                 <p class="text-gray-600 text-sm leading-relaxed lang-hi">
-                    पासपोर्ट साइज फोटो, आकर्षक YouTube Thumbnails, सोशल मीडिया पोस्ट, और हाई क्वालिटी बैनर डिज़ाइन।
+                    पासपोर्ट साइज फोटो, आकर्षक YouTube Thumbnails, सोशल मीडिया पोस्ट, और हाई क्वालिटी बैनर डिज़ाइन।
                 </p>
                 <p class="text-gray-600 text-sm leading-relaxed lang-en">
                     Passport-size photos, high-converting YouTube thumbnails, social media posts, and custom banners.
@@ -223,7 +250,7 @@
                         <option value="Exam Form">ऑनलाइन नौकरी-परीक्षा फॉर्म / Recruitment Form (BPSC, CTET, ANM)</option>
                         <option value="Certificate">प्रमाण पत्र / Certificates (Caste / Income / Residence / PAN)</option>
                         <option value="Banking">बैंकिंग या DBT समस्या / Banking & DBT Services</option>
-                        <option value="Design">फोटो या थंबनेल डिज़ाइन / Graphic & Thumbnail Design</option>
+                        <option value="Design">फोटो या थंबनेल डिज़ाइन / Graphic & Thumbnail Design</option>
                         <option value="Other">अन्य डिजिटल सेवा / Other Digital Work</option>
                     </select>
                 </div>
@@ -285,7 +312,7 @@
                     <div class="bg-amber-500 w-16 h-16 flex items-center justify-center rounded-full text-blue-950 text-2xl font-bold mx-auto mb-4">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 lang-hi">तेज़ व किफायती</h3>
+                    <h3 class="text-xl font-semibold mb-2 lang-hi">तेज़ व किफायती</h3>
                     <h3 class="text-xl font-semibold mb-2 lang-en">Fast & Affordable</h3>
                     <p class="text-blue-200 text-sm lang-hi">कस्टमर की समस्याओं का तुरंत समाधान और बेहद वाजिब शुल्क पर काम।</p>
                     <p class="text-blue-200 text-sm lang-en">Instant solutions for digital grievances at very affordable pricing.</p>
@@ -334,7 +361,7 @@
                             <div class="text-blue-900 text-xl mt-1"><i class="fa-solid fa-envelope"></i></div>
                             <div>
                                 <h4 class="font-bold text-gray-800"><span class="lang-hi">ईमेल:</span><span class="lang-en">Email:</span></h4>
-                                <p class="text-gray-600 text-sm">contact.racsc@gmail.com</p>
+                                <p class="text-gray-600 text-sm">racsc91@gmail.com</p>
                             </div>
                         </div>
  
@@ -377,26 +404,47 @@
         </div>
     </footer>
 
-    <!-- JavaScript to toggle Language Switch smoothly -->
+    <!-- Secret Maintenance Admin Controller Button (सिर्फ आपके कंट्रोल के लिए स्क्रीन के नीचे कोने में छोटा सा बटन) -->
+    <div class="fixed bottom-4 right-4 z-[10000] opacity-30 hover:opacity-100 transition">
+        <button onclick="toggleMaintenanceMode()" class="bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-md border border-gray-600 font-mono">
+            🛠️ Admin Control
+        </button>
+    </div>
+
+    <!-- JavaScript to toggle Language Switch smoothly & Maintenance Mode -->
     <script>
+        // 1. Language Controller
         function switchLanguage(lang) {
             const hiElements = document.querySelectorAll('.lang-hi');
             const enElements = document.querySelectorAll('.lang-en');
             
             if (lang === 'en') {
-                // Hide Hindi content
                 hiElements.forEach(el => el.style.display = 'none');
-                // Show English content
                 enElements.forEach(el => el.style.display = 'block');
-                // Update HTML language tag attribute
                 document.documentElement.lang = 'en';
             } else {
-                // Show Hindi content
                 hiElements.forEach(el => el.style.display = 'block');
-                // Hide English content
                 enElements.forEach(el => el.style.display = 'none');
-                // Update HTML language tag attribute
                 document.documentElement.lang = 'hi';
+            }
+        }
+
+        // 2. Maintenance Mode Controller
+        // जब भी काम करना हो, आप नीचे दिए बटन को दबा सकते हैं या इस वेरिएबल को true कर सकते हैं।
+        let isMaintenanceActive = false; 
+
+        function toggleMaintenanceMode() {
+            const screen = document.getElementById('maintenanceScreen');
+            isMaintenanceActive = !isMaintenanceActive;
+            
+            if (isMaintenanceActive) {
+                screen.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // स्क्रॉल बंद करने के लिए
+                alert("Maintenance Mode चालू हो गया है! ग्राहकों को अब मेंटेनेंस पेज दिखेगा।");
+            } else {
+                screen.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // स्क्रॉल चालू करने के लिए
+                alert("Maintenance Mode बंद हो गया है! वेबसाइट अब सबके लिए लाइव है।");
             }
         }
     </script>
