@@ -230,54 +230,7 @@
                 <p class="text-blue-100 text-xs md:text-sm mt-2 lang-en hidden">Fill details and upload photo / PDF of papers, we will process it instantly</p> 
             </div> 
              
-            <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="p-8 md:p-10 space-y-6"> 
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> 
-                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> 
-                    <div> 
-                        <label class="block text-sm font-bold text-blue-900 mb-2"><span class="lang-hi">आपका नाम</span><span class="lang-en hidden">Full Name</span> <span class="text-red-500">*</span></label> 
-                        <input type="text" name="name" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-blue-200 bg-blue-50/50 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"> 
-                    </div> 
-                    <div> 
-                        <label class="block text-sm font-bold text-blue-900 mb-2"><span class="lang-hi">व्हाट्सएप / मोबाइल नंबर</span><span class="lang-en hidden">Mobile Number</span> <span class="text-red-500">*</span></label> 
-                        <input type="tel" name="phone" required placeholder="Mobile Number" class="w-full px-4 py-3 rounded-xl border border-blue-200 bg-blue-50/50 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"> 
-                    </div> 
-                </div> 
- 
-                <div> 
-                    <label class="block text-sm font-bold text-blue-900 mb-2"><span class="lang-hi">आपको कौन सी सेवा चाहिए?</span><span class="lang-en hidden">Choose Required Service</span> <span class="text-red-500">*</span></label> 
-                    <select name="service_type" required class="w-full px-4 py-3 rounded-xl border border-blue-200 bg-blue-50/50 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-sm"> 
-                        <option value="" disabled selected>सर्विस का चयन करें / Select Service...</option> 
-                        <option value="Govt Scheme">सरकारी योजना (महिला रोज़गार / कन्या उत्थान / PM Kisan)</option> 
-                        <option value="Exam Form">प्रतियोगी भर्ती परीक्षा फॉर्म (BPSC, CTET, BTSC ANM)</option> 
-                        <option value="Certificate">प्रमाण पत्र आवेदन (Caste, Income, Residence, PAN Card)</option> 
-                        <option value="Banking">बैंकिंग भुगतान सुधार / DBT समस्या</option> 
-                        <option value="Design">YouTube थंबनेल / फोटो एडिटिंग</option> 
-                        <option value="Other">अन्य ऑनलाइन साइबर कैफे सेवा</option> 
-                    </select> 
-                </div> 
- 
-                <div> 
-                    <label class="block text-sm font-bold text-blue-900 mb-2"><span class="lang-hi">काम के बारे में बताएं (शॉर्ट में)</span><span class="lang-en hidden">Work Description</span></label> 
-                    <textarea name="details" rows="3" placeholder="Write work info here..." class="w-full px-4 py-3 rounded-xl border border-blue-200 bg-blue-50/50 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition text-sm"></textarea> 
-                </div> 
- 
-                <div class="bg-indigo-50 p-5 rounded-2xl border border-indigo-100"> 
-                    <label class="block text-sm font-bold text-indigo-700 mb-2 flex items-center gap-2"> 
-                        <i class="fa-solid fa-cloud-arrow-up text-xl"></i>  
-                        <span class="lang-hi">दस्तावेज़ (आधार/फोटो/मार्कशीट) अपलोड करें</span><span class="lang-en hidden">Upload Documents</span> 
-                    </label> 
-                    <p class="text-xs text-indigo-500 mb-3 lang-hi">कृपया अपने डाक्यूमेंट्स की साफ़ फोटो या PDF चुनें:</p> 
-                    <p class="text-xs text-indigo-500 mb-3 lang-en hidden">Upload clear photos or PDFs of required papers:</p> 
-                     
-                    <input type="file" name="documents" multiple class="block w-full text-sm text-blue-700 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer transition-colors"> 
-                </div> 
- 
-                <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-amber-500 text-blue-900 font-black py-4 px-4 rounded-xl shadow-lg glow-button hover:scale-[1.02] transition duration-300 flex items-center justify-center gap-2 text-lg"> 
-                    <i class="fa-solid fa-paper-plane"></i> <span class="lang-hi">जानकारी भेजें और काम शुरू करवाएं</span><span class="lang-en hidden">Submit Request Desk</span> 
-                </button> 
-            </form> 
-        </div> 
+           
     </section> 
  
     <!-- Contact Helpdesk --> 
